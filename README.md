@@ -11,7 +11,7 @@
 2. mkdir ~/osrm/car && mv quebec-latest.osrm* car/
 3. docker run -t -v $(pwd)/car:/data osrm/osrm-backend osrm-partition /data/quebec-latest.osrm
 4. docker run -t -v $(pwd)/car:/data osrm/osrm-backend osrm-customize /data/quebec-latest.osrm
-5. _Debugging:_ docker run -t -i -p 5000:5000 -v $(pwd)/car:/data osrm/osrm-backend osrm-routed --algorithm MLD /data/quebec-latest.osrm
+5. _Debugging:_ docker run -d -p 5000:5000 -v $(pwd)/car:/data osrm/osrm-backend osrm-routed --algorithm MLD /data/quebec-latest.osrm
 
 
 ### Run bicycle routing engine
@@ -19,7 +19,7 @@
 2. mkdir ~/osrm/bicycle && mv quebec-latest.osrm* bicycle/
 3. docker run -t -v $(pwd)/bicycle:/data osrm/osrm-backend osrm-partition /data/quebec-latest.osrm
 4. docker run -t -v $(pwd)/bicycle:/data osrm/osrm-backend osrm-customize /data/quebec-latest.osrm
-5. _Debugging:_ docker run -t -i -p 5001:5001 -v $(pwd)/bicycle:/data osrm/osrm-backend osrm-routed --algorithm MLD /data/quebec-latest.osrm
+5. _Debugging:_ docker run -d -p 5001:5000 -v $(pwd)/bicycle:/data osrm/osrm-backend osrm-routed --algorithm MLD /data/quebec-latest.osrm
 
 
 ### Run foot routing engine
@@ -27,7 +27,7 @@
 2. mkdir ~/osrm/foot && mv quebec-latest.osrm* foot/
 3. docker run -t -v $(pwd)/foot:/data osrm/osrm-backend osrm-partition /data/quebec-latest.osrm
 4. docker run -t -v $(pwd)/foot:/data osrm/osrm-backend osrm-customize /data/quebec-latest.osrm
-5. _Debugging:_ docker run -t -i -p 5002:5002 -v $(pwd)/foot:/data osrm/osrm-backend osrm-routed --algorithm MLD /data/quebec-latest.osrm
+5. _Debugging:_ docker run -d -p 5002:5000 -v $(pwd)/foot:/data osrm/osrm-backend osrm-routed --algorithm MLD /data/quebec-latest.osrm
 
 
 
